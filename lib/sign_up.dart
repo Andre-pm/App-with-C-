@@ -1,12 +1,57 @@
 import 'package:app_login/app_asset.dart';
 import 'package:app_login/sucess_register.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    TextEditingController nomeController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    TextEditingController passwordCheckController = TextEditingController();
+
+    String? verifyPassword() {
+      if (passwordController.text != passwordCheckController.text) {
+        return "As senhas não coincidem";
+      } else if (nomeController.text.isEmpty ||
+          emailController.text.isEmpty ||
+          passwordController.text.isEmpty ||
+          passwordCheckController.text.isEmpty) {
+        return "Todos os campos devem estar preenchidos";
+      } else {
+        return null;
+      }
+    }
+
+    void createUser() async {
+      final emailClient = Provider((_) => emailController.text);
+      Map<String, dynamic> headers = {
+        "accept": 'Application/json',
+      };
+
+      Map<String, dynamic> body = {
+        'nome': nomeController.text,
+        'email': emailController.text,
+        'senha': passwordController.text
+      };
+
+      Response response;
+      Dio dio = Dio();
+
+      response = await dio.post(
+        "http://192.168.1.200/api/usuario",
+        data: body,
+        options: Options(headers: headers),
+      );
+      print(
+        response.data.toString(),
+      );
+    }
+
     return Scaffold(
       body: Container(
         color: const Color.fromARGB(255, 75, 14, 136),
@@ -79,6 +124,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
+                    controller: nomeController,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -90,6 +136,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
+                    controller: emailController,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -101,6 +148,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
+                    controller: passwordController,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -112,6 +160,7 @@ class SignUp extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
+                    controller: passwordCheckController,
                     decoration: const InputDecoration(
                       filled: true,
                       fillColor: Colors.white,
@@ -125,6 +174,9 @@ class SignUp extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: ElevatedButton(
                     onPressed: () {
+                      if (verifyPassword() == null) {
+                        createUser();
+                      }
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) {

@@ -1,12 +1,15 @@
 import 'package:app_login/app_asset.dart';
 import 'package:app_login/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SucessRegister extends StatelessWidget {
+class SucessRegister extends HookConsumerWidget {
   const SucessRegister({Key? key}) : super(key: key);
 
+  ProviderListenable<String> get emailClient => emailClient;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Container(
         color: const Color.fromARGB(255, 75, 14, 136),
@@ -31,9 +34,9 @@ class SucessRegister extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                const Text(
-                  "andre@gmail.com",
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                Text(
+                  ref.watch(emailClient),
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 40),
                 Padding(
