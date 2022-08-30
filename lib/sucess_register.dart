@@ -17,7 +17,7 @@ class SucessRegister extends StatelessWidget {
               children: [
                 const SizedBox(height: 30),
                 const Text(
-                  "Yor registration\nwas sucessful!",
+                  "Your registration\nwas sucessful!",
                   style: TextStyle(color: Colors.white, fontSize: 45),
                 ),
                 const SizedBox(height: 70),

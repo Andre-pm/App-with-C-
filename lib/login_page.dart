@@ -29,8 +29,9 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {},
                       icon: Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white,
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -46,8 +47,9 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {},
                       icon: Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white,
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -63,8 +65,9 @@ class LoginPage extends StatelessWidget {
                       onPressed: () {},
                       icon: Container(
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                          borderRadius: BorderRadius.circular(50),
+                          color: Colors.white,
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -83,8 +86,7 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -95,8 +97,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -110,8 +111,7 @@ class LoginPage extends StatelessWidget {
                   onPressed: () {},
                   child: const Text(
                     "Forgot your password",
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
+                    style: TextStyle(color: Colors.grey, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 60),
@@ -124,10 +124,8 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       primary: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold),
+                      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
                     child: const Center(
                       child: Text(
@@ -159,9 +157,10 @@ class LoginPage extends StatelessWidget {
                   child: const Text(
                     "SIGN UP",
                     style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        decoration: TextDecoration.underline),
+                      color: Colors.white,
+                      fontSize: 25,
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
                 )
               ],
