@@ -22,14 +22,14 @@ class SucessRegister extends StatelessWidget {
                 const SizedBox(height: 70),
                 Image.asset(right),
                 const SizedBox(height: 70),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: const Text(
+                const Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Text(
                     "Your registration was succesful and we have sent you a confirmation receipt to your email at:",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 const Text(
                   "andre@gmail.com",
                   style: TextStyle(
