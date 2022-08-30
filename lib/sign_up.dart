@@ -1,10 +1,9 @@
 import 'package:app_login/app_asset.dart';
+import 'package:app_login/sucess_register.dart';
 import 'package:flutter/material.dart';
 
-import 'sign_up.dart';
-
-class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class SignUp extends StatelessWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +15,9 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                const SizedBox(height: 30),
                 const Text(
-                  "Sign in",
+                  "Create Account",
                   style: TextStyle(color: Colors.white, fontSize: 45),
                 ),
                 const SizedBox(height: 30),
@@ -79,8 +79,20 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 const Text(
-                  "or use your email account",
+                  "or use your email for registration",
                   style: TextStyle(color: Colors.white),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      prefixIcon: Icon(Icons.person_outline_rounded),
+                      hintText: "Nome",
+                    ),
+                  ),
                 ),
                 Padding(
                   padding:
@@ -106,19 +118,31 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Forgot your password",
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: TextFormField(
+                    decoration: const InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      prefixIcon: Icon(Icons.lock_outline),
+                      hintText: "Confirm Password",
+                    ),
                   ),
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 40),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return const SucessRegister();
+                          },
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
@@ -131,7 +155,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     child: const Center(
                       child: Text(
-                        "SIGN IN",
+                        "SIGN UP",
                         style: TextStyle(
                           color: Color.fromARGB(255, 75, 14, 136),
                           fontSize: 17,
@@ -142,22 +166,16 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 50),
                 const Text(
-                  "Enter your personal details\nand start journey with us",
+                  "To keep connected wih us please\nlogin with your personal info",
                   style: TextStyle(color: Colors.white),
                 ),
                 const SizedBox(height: 50),
                 TextButton(
                   onPressed: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const SignUp();
-                        },
-                      ),
-                    );
+                    Navigator.of(context).pop();
                   },
                   child: const Text(
-                    "SIGN UP",
+                    "SIGN IN",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 25,
