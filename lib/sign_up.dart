@@ -28,9 +28,7 @@ class SignUp extends StatelessWidget {
                       iconSize: 50,
                       onPressed: () {},
                       icon: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.white),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -45,9 +43,7 @@ class SignUp extends StatelessWidget {
                       iconSize: 50,
                       onPressed: () {},
                       icon: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.white),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -62,9 +58,7 @@ class SignUp extends StatelessWidget {
                       iconSize: 50,
                       onPressed: () {},
                       icon: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(50), color: Colors.white),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SizedBox(
@@ -83,8 +77,7 @@ class SignUp extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -95,8 +88,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -107,8 +99,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -119,8 +110,7 @@ class SignUp extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
                   child: TextFormField(
                     decoration: const InputDecoration(
                       filled: true,
@@ -130,7 +120,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 20),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 50),
                   child: ElevatedButton(
@@ -148,10 +138,8 @@ class SignUp extends StatelessWidget {
                         borderRadius: BorderRadius.circular(50),
                       ),
                       primary: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 50, vertical: 20),
-                      textStyle: const TextStyle(
-                          fontSize: 30, fontWeight: FontWeight.bold),
+                      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                      textStyle: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
                     child: const Center(
                       child: Text(
@@ -164,22 +152,19 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 const Text(
                   "To keep connected wih us please\nlogin with your personal info",
                   style: TextStyle(color: Colors.white),
                 ),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
                   child: const Text(
                     "SIGN IN",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        decoration: TextDecoration.underline),
+                    style: TextStyle(color: Colors.white, fontSize: 25, decoration: TextDecoration.underline),
                   ),
                 )
               ],
